@@ -12,7 +12,7 @@ func selectionSort(arr []int) {
 			}
 		}
 	}
-	fmt.Println("\nAfter Selection Sort")
+	fmt.Println("\n선택정렬 완료")
 	for _, val := range arr {
 		fmt.Println(val)
 	}
