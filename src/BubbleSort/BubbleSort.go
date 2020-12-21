@@ -18,6 +18,6 @@ func bubbleSort(arr []int) {
 }
 
 func main() {
-	sample := []int{3,1,2,3,6,7,10,50,11}
+	sample := []int{3,1,2,6,7,10,50,11}
 	bubbleSort(sample)
 }
