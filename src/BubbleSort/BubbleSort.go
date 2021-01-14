@@ -2,22 +2,20 @@ package main
 
 import "fmt"
 
-func bubbleSort(arr []int) {
-	len := len(arr)
-	for i:=0; i<len-1; i++ {
-		for j:=0; j<len-i-1; j++ {
-			if arr[j] > arr[j+1] {
-				arr[j], arr[j+1] = arr[j+1], arr[j]
+func bubbleSort(arr []int) []int {
+	swapped := true
+	for swapped {
+		swapped = false
+		for i := 0; i < len(arr)-1; i++ {
+			if arr[i+1] < arr[i] {
+				arr[i+1], arr[i] = arr[i], arr[i+1]
+				swapped = true
 			}
 		}
 	}
-	fmt.Println("\n버블정렬 완료")
-	for _, val := range arr {
-		fmt.Println(val)
-	}
+	return arr
 }
 
 func main() {
-	sample := []int{3,1,2,6,7,10,50,11}
-	bubbleSort(sample)
+	fmt.Println(bubbleSort([]int{1, 2, 3, 4, 7, 6}))
 }

@@ -2,23 +2,22 @@ package main
 
 import "fmt"
 
-func selectionSort(arr []int) {
-	len := len(arr)
-	for i:=0; i<len-1; i++ {
-		minIndex := i
-		for j:=i+1; j<len; j++ {
-			if arr[j] < arr[minIndex] {
-				arr[j], arr[minIndex] = arr[minIndex], arr[j]
+func SelectionSort(arr []int) []int {
+	for i := 0; i < len(arr); i++ {
+		min := i
+		for j := i + 1; j < len(arr); j++ {
+			if arr[j] < arr[min] {
+				min = j
 			}
 		}
+
+		tmp := arr[i]
+		arr[i] = arr[min]
+		arr[min] = tmp
 	}
-	fmt.Println("\n선택정렬 완료")
-	for _, val := range arr {
-		fmt.Println(val)
-	}
+	return arr
 }
 
 func main() {
-	sample := []int{0,5,2,4,1,1,500,24}
-	selectionSort(sample)
+	fmt.Println(SelectionSort([]int{3, 1, 7, 6, 5}))
 }
